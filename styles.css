@@ -9,10 +9,12 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 2.5fr 1.5fr; /* Adjusted column widths */
-    gap: 20px; /* Added spacing between columns */
+    grid-template-columns: 1fr 2.5fr 1.5fr; /* Three columns */
+    gap: 20px; /* Spacing between columns */
     width: 90%;
     margin: 20px auto;
+    justify-content: space-between;
+    border: 1px solid  
 }
 
 /* Navbar Styling */
@@ -97,21 +99,17 @@ hr {
 }
 
 /* Main Layout */
-main {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    gap: 20px;
-}
 
 /* Left Sidebar */
+
 .profile-sidebar {
-    width: 20%;
-    background: #2d3339;
+    width: 30%;
+    background: #2d3339; /* Dark sidebar background */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
+    text-align: left; /* Align text to the left */
+    color: #d4d4d4; /* Light text color */
 }
 
 .profile-pic-large {
@@ -119,8 +117,84 @@ main {
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
+    margin: 0 auto 10px; /* Center align and add space */
+    display: block;
 }
 
+.user-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff; /* White text for better contrast */
+    text-align: center;
+}
+
+.user-title {
+    font-size: 14px;
+    color: #b0b3b8; /* Slightly lighter gray */
+    text-align: center;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #444;
+    margin: 15px 0;
+}
+
+.premium-btn {
+    background-color: #0073b1; /* LinkedIn Blue */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+}
+
+.premium-btn:hover {
+    background-color: #005582;
+}
+
+.analytics-btn {
+    background-color: #4caf50; /* Green for analytics */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+}
+
+.analytics-btn:hover {
+    background-color: #3d8b3a;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #d4d4d4;
+    margin-top: 15px;
+}
+
+.recent-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: #b0b3b8;
+}
+
+.recent-links li {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.recent-links li:hover {
+    color: #0073b1;
+    cursor: pointer;
+}
 /* Feed Section */
 .feed {
     width: 100%;
@@ -193,61 +267,109 @@ main {
 }
 
 /* Right Sidebar */
-.suggestions {
-    width: 60%;
-    padding: 20px;
+/* Right Sidebar */
+.right-sidebar {
+    width: 40%;
     background: #2d3339;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    color: #d4d4d4;
 }
 
-.suggestions h4 {
+/* Section Titles */
+.section-title {
     font-size: 16px;
-    margin-bottom: 10px;
-    color: #d1d1d1;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffffff;
 }
 
-.suggested-profile {
-    display: flex;
+/* Recommendations Section*/
+.recommendations {
+    margin-bottom: 20px;
+}
+
+.recommendation {
+    display: grid;
     align-items: center;
-    margin-top: 15px;
-    gap: 10px;
+    margin-bottom: 15px;
 }
 
-.suggested-profile img {
+.company-logo {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
+    margin-right: 10px;
 }
 
-.suggested-profile button {
-    padding: 5px 15px;
-    border: none;
-    background: #0a66c2;
-    color: white;
-    border-radius: 20px;
-    cursor: pointer;
+.recommendation-details {
+    flex: 1;
+}
+
+.company-name {
     font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
 }
 
-.suggested-profile button:hover {
-    background: #004182;
+.company-description {
+    font-size: 12px;
+    color: #b0b3b8;
+    margin-bottom: 5px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    main {
-        flex-direction: column;
-    }
+.follow-btn {
+    background-color: #0073b1;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
 
-    .profile-sidebar,
-    .feed,
-    .suggestions {
-        width: 100%;
-    }
+.follow-btn:hover {
+    background-color: #005582;
+}
 
-    .search-bar input {
-        width: 200px;
-    }
+.view-all {
+    display: block;
+    color: #0073b1;
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+/* Advertisement Section */
+.advertisement {
+    margin: 20px 0;
+}
+
+.ad-image {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Footer Section */
+.footer {
+    font-size: 12px;
+    color: #b0b3b8;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.footer a {
+    color: #0073b1;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }
