@@ -31,7 +31,6 @@ body {
 .logo-search {
     display: flex;
     align-items: center;
-    gap: 15px; /* Space between logo and search bar */
 }
 .logo img {
     width: 40px; /* Adjust logo size */
@@ -40,7 +39,7 @@ body {
 
 .search-bar {
     flex-grow: 1; /* Allow search bar to grow */
-    margin: 0 20px;
+    margin: 10px 20px;
     max-width: 300px;
 }
 
