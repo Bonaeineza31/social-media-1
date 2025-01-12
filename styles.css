@@ -14,7 +14,6 @@ body {
     width: 90%;
     margin: 20px auto;
     justify-content: space-between;
-    border: 1px solid  
 }
 
 /* Navbar Styling */
@@ -103,7 +102,7 @@ hr {
 /* Left Sidebar */
 
 .profile-sidebar {
-    width: 30%;
+    width: 85%;
     background: #2d3339; /* Dark sidebar background */
     padding: 20px;
     border-radius: 10px;
@@ -267,9 +266,8 @@ hr {
 }
 
 /* Right Sidebar */
-/* Right Sidebar */
 .right-sidebar {
-    width: 40%;
+    width: 90%;
     background: #2d3339;
     padding: 20px;
     border-radius: 10px;
@@ -285,13 +283,13 @@ hr {
     color: #ffffff;
 }
 
-/* Recommendations Section*/
+/* Recommendations Section */
 .recommendations {
     margin-bottom: 20px;
 }
 
 .recommendation {
-    display: grid;
+    display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
@@ -372,4 +370,21 @@ hr {
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .profile-sidebar,
+    .feed,
+    .suggestions {
+        width: 100%;
+    }
+
+    .search-bar input {
+        width: 200px;
+    }
 }
