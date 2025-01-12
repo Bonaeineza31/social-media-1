@@ -21,52 +21,88 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2d3339;
+    background-color: #2d3339; /* Dark background color */
     padding: 10px 20px;
     color: white;
-    position: sticky; /* Navbar sticks to the top */
+    position: sticky;
     top: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+.logo-search {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between logo and search bar */
+}
+.logo img {
+    width: 40px; /* Adjust logo size */
+    height: auto;
 }
 
-.logo img {
-    width: 50px;
-    height: auto;
-    padding-left: 50px;
+.search-bar {
+    flex-grow: 1; /* Allow search bar to grow */
+    margin: 0 20px;
+    max-width: 300px;
 }
 
 .search-bar input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 15px;
-    width: 150px;
-    font-size: 16px;
- /* Dark input background */
-    color: #d1d1d1;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 20px; /* Rounded input */
+    border: none;
+    background-color: #404448; /* Slightly lighter than navbar */
+    color: white;
+    font-size: 14px;
 }
 
 .search-bar input::placeholder {
-    color: #888; /* Placeholder text color */
+    color: #aaa;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px; /* Space between each icon group */
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-links a {
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center;
+    text-decoration: none; /* Remove underline */
     color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 16px; /* Font size for text */
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    text-decoration: underline;
+.nav-links i {
+    font-size: 20px; /* Adjust icon size */
+    margin-bottom: 5px; /* Add space between icon and text */
+}
+
+.nav-links span {
+    font-family: 'Arial', sans-serif; /* Use a clean font */
+    font-weight: normal; /* Avoid bold text */
+    font-size: 14px; /* Text size smaller than icons */
+    color: #d1d1d1; /* Subtle color for text */
+}
+
+.nav-links a:hover i,
+.nav-links a:hover span {
+    color: #bbb; /* Subtle hover effect for both icon and text */
+}
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between text and profile pic */
 }
 
 .profile-pic {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     object-fit: cover;
 }
+
 
 /* Sidebar Styling */
 .sidebar {
