@@ -9,69 +9,84 @@
 </head>
 <body>
     <!-- Navbar -->
-    <div class="navbar">
-        <div class="logo-search">
-            <div class="logo">
-                <img src="pictures/Screenshot 2025-01-03 220439.png" alt="Logo">
-            </div>
-            <div class="search-bar">
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="pictures/Screenshot 2025-01-03 220439.png" alt="LinkedIn" class="logo">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
                 <input type="text" placeholder="Search">
             </div>
         </div>
-            <div class="nav-links">
-                <a href="#">
-                    <i class="fas fa-home"></i>
-                    <span>Home</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-user-friends"></i>
-                    <span>My Network</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-briefcase"></i>
-                    <span>Jobs</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-envelope"></i>
-                    <span>Messaging</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-bell"></i>
-                    <span>Notifications</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-user-circle"></i>
-                    <span>Me</span>
-                </a>
-            </div>
-        <div class="profile">
-            <img src="pictures/IMG-20241227-WA0128.jpg" alt="Profile" class="profile-pic">
+        
+        <div class="nav-center">
+            <a href="#" class="nav-link active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="fas fa-user-friends"></i>
+                <span>Network</span>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Jobs</span>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="fas fa-comment-dots"></i>
+                <span>Messaging</span>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+            <a href="#" class="nav-link">
+                <img src="pictures/IMG-20241227-WA0128.jpg" alt="profile" class="nav-profile">
+                <span>Me</span>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="fas fa-th"></i>
+                <span>Work</span>
+            </a>
+            <a href="#" class="premium-link">Try Premium for free</a>
         </div>
-    </div>
+    </nav>
 
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Sidebar -->
-        <div class="profile-sidebar">
-            <img src="pictures/IMG-20241227-WA0128.jpg" alt="Profile" class="profile-pic-large"> <!-- Replace with your profile picture -->
-            <p class="user-name">Bonae Ineza</p>
-            <p class="user-title">Junior Software Developer</p>
-            <p>Software Developer | JavaScript Enthusiast</p>
-            <hr />
-            <p><strong>Who's viewed your profile:</strong> 62</p>
-            <p><strong>Impressions of your post:</strong> 390</p>
-            <hr />
-            <button class="premium-btn">Try Premium for free</button>
-            <hr />
-            <p class="section-title">My Items</p>
-            <hr />
-            <p class="section-title">KHills Team</p>
-            <p><strong>Page notifications:</strong> 2</p>
-            <p><strong>Page visitors:</strong> 2</p>
-            <button class="analytics-btn">See visitor analytics</button>
-            <hr />
-            <p class="section-title">Recent</p>
-            <ul class="recent-links">
+        <!-- left Sidebar -->
+        <div class="container">
+            <!-- Left Sidebar -->
+            <aside class="left-sidebar">
+                <div class="profile-card">
+                    <div class="profile-header"></div>
+                    <div class="profile-info">
+                        <img src="pictures/IMG-20241227-WA0128.jpg" alt="Profile" class="profile-img">
+                        <h2>Bonae Ineza</h2>
+                        <p>Software Developer</p>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span>Who's viewed your profile</span>
+                            <span class="number">67</span>
+                        </div>
+                        <div class="stat">
+                            <span>Impressions of your post</span>
+                            <span class="number">385</span>
+                        </div>
+                    </div>
+                    <div class="premium-card">
+                        <span>Access exclusive tools & insights</span>
+                        <a href="#">Try Premium for free</a>
+                    </div>
+                    <div class="items-card">
+                        <i class="fas fa-bookmark"></i>
+                        <span>My items</span>
+                    </div>
+             <p class="section-title">KHills Team</p>
+             <p><strong>Page notifications:</strong> 2</p>
+             <p><strong>Page visitors:</strong> 2</p>
+             <button class="analytics-btn">See visitor analytics</button>
+             <hr />
+             <p class="section-title">Recent</p>
+             <ul class="recent-links">
                 <li>zerotomastery.io</li>
                 <li>Software Developers & Friends</li>
                 <li>Front End Developer Group</li>
@@ -85,22 +100,50 @@
                 <li>Front End Developer Group</li>
             </ul>
         </div>
+        </aside>
         <!-- Feed Section -->
-        <div class="feed">
-            <!-- Start a Post -->
-            <div class="start-post">
-                <img src="pictures/IMG-20241227-WA0128.jpg" alt="Profile" class="profile-pic"> <!-- Replace with your profile picture -->
-                <input type="text" placeholder="What's on your mind?">
-                <button>Post</button>
+        <main class="main-content">
+            <div class="create-post">
+                <div class="post-input">
+                    <img src="pictures/IMG-20241227-WA0128.jpg" alt="profile" class="post-profile">
+                    <button class="start-post">Start a post</button>
+                </div>
+                <div class="post-options">
+                    <button class="post-option">
+                        <i class="fas fa-image text-blue"></i>
+                        <span>Photo</span>
+                    </button>
+                    <button class="post-option">
+                        <i class="fas fa-video text-green"></i>
+                        <span>Video</span>
+                    </button>
+                    <button class="post-option">
+                        <i class="fas fa-calendar text-orange"></i>
+                        <span>Event</span>
+                    </button>
+                    <button class="post-option">
+                        <i class="fas fa-newspaper text-red"></i>
+                        <span>Write article</span>
+                    </button>
+                </div>
+            </div>
+            <div class="feed-sort">
+                <hr>
+                <span>Sort by: </span>
+                <button class="sort-button">
+                    Top
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <hr>
             </div>
 
             <!-- Posts -->
-            <div class="post">
+            <div class="post-content">
                 <p><strong>Loic Izere</strong></p>
                 <p>Had a great day exploring the city!</p>
                 <img src="pictures/IMG-20250103-WA0031.jpg" alt="Post Image" class="post-image"> <!-- Replace with a post image -->
             </div>
-        </div>
+        </main>
 
         <!-- Suggestions Section -->
         <div class="right-sidebar">

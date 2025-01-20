@@ -1,105 +1,160 @@
-/* General Styling */
-body {
-    font-family: Arial, sans-serif;
+:root {
+    --linkedin-blue: #0a66c2;
+    --bg-primary: #1d2226;
+    --bg-secondary: #2d3339;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b3b8;
+    --border-color: #404040;
+}
+
+* {
     margin: 0;
     padding: 0;
-    background-color: #1d2226; /* Dark background */
-    color: #d1d1d1; /* Light text for readability */
+    box-sizing: border-box;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: 1.5fr 2.5fr 1.5fr; /* Three columns */
-    gap: 20px; /* Spacing between columns */
-    width: 90%;
-    margin: 20px auto;
-    justify-content: space-between;
+body {
+    background-color: black;
+    color: var(--text-primary);
 }
-
 /* Navbar Styling */
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:#2d3339 ;
+    padding: 0 24px;
+    height: 85px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2d3339; /* Dark background color */
-    padding: 10px 20px;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* Ensure it stays above other content */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 100;
 }
-.logo-search {
+
+.nav-left {
     display: flex;
     align-items: center;
-}
-.logo img {
-    width: 40px; /* Adjust logo size */
-    height: auto;
+    gap: 8px;
+    min-width: 420px;
 }
 
-.search-bar {
-    flex-grow: 1; /* Allow search bar to grow */
-    margin: 10px 20px;
-    max-width: 300px;
+.logo {
+    width: 34px;
+    height: 34px;
+    margin-right: 8px;
 }
 
-.search-bar input {
+.search-box {
+    position: relative;
+    display: flex;
+    max-width: 280px;
+}
+
+.search-box input {
     width: 100%;
-    padding: 8px 12px;
-    border-radius: 20px; /* Rounded input */
+    padding: 8px 8px 8px 40px;
     border: none;
-    background-color: #404448; /* Slightly lighter than navbar */
+    border-radius: 4px;
+    background-color: #38434f;
     color: white;
     font-size: 14px;
+    height: 34px;
 }
 
-.search-bar input::placeholder {
-    color: #aaa;
+.search-box input:focus {
+    background-color: white;
+    color: black;
+    outline: none;
 }
 
-.nav-links {
+.search-box i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-center {
     display: flex;
-    gap: 30px; /* Space between each icon group */
+    align-items: center;
+    gap: 0;
+    height: 52px;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    min-width: 80px;
+    height: 52px;
+    position: relative;
+    transition: color 0.2s;
 }
 
-.nav-links a {
-    display: flex;
-    flex-direction: column; /* Stack icon and text vertically */
-    align-items: center;
-    text-decoration: none; /* Remove underline */
-    color: white;
-    font-size: 16px; /* Font size for text */
+.nav-link i {
+    font-size: 20px;
+    margin-bottom: 4px;
 }
 
-.nav-links i {
-    font-size: 20px; /* Adjust icon size */
-    margin-bottom: 5px; /* Add space between icon and text */
+.nav-link span {
+    font-size: 12px;
+    white-space: nowrap;
 }
 
-.nav-links span {
-    font-family: 'Arial', sans-serif; /* Use a clean font */
-    font-weight: normal; /* Avoid bold text */
-    font-size: 14px; /* Text size smaller than icons */
-    color: #d1d1d1; /* Subtle color for text */
+.nav-link:hover, .nav-link.active {
+    color: var(--text-primary);
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.2s;
 }
 
-.nav-links a:hover i,
-.nav-links a:hover span {
-    color: #bbb; /* Subtle hover effect for both icon and text */
+.nav-link:hover::after, .nav-link.active::after {
+    transform: scaleX(1);
 }
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between text and profile pic */
-}
-
-.profile-pic {
-    width: 35px;
-    height: 35px;
+.nav-profile {
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.premium-link {
+    color: #ae8b1d;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 0 12px;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    height: 52px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* Container Layout */
+.container {
+    max-width: 1200px;
+    margin: 76px auto 0;
+    padding: 24px 20px;
+    display: grid;
+    grid-template-columns: 250px minmax(0, 2fr) 300px;
+    gap: 24px;
+    width: 100%;
 }
 
 
@@ -136,58 +191,57 @@ hr {
 
 /* Left Sidebar */
 
-.profile-sidebar {
-    width: 88%;
-    background: #2d3339; /* Dark sidebar background */
-    padding: 20px;
+.left-sidebar {
+    position: sticky;
+    top: 70px;
+    height: fit-content;
+}
+
+.profile-card {
+    background-color: var(--bg-secondary);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    text-align: left; /* Align text to the left */
-    color: #d4d4d4; /* Light text color */
+    overflow: hidden;
 }
 
-.profile-pic-large {
-    width: 80px;
-    height: 80px;
+.profile-header {
+    height: 60px;
+    background-color: #4c4c4c;
+}
+
+.profile-info {
+    text-align: center;
+    padding: 0 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-img {
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 10px; /* Center align and add space */
-    display: block;
+    margin-top: -36px;
+    border: 4px solid var(--bg-secondary);
 }
 
-.user-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: #ffffff; /* White text for better contrast */
-    text-align: center;
+.profile-info h2 {
+    font-size: 16px;
+    margin: 8px 0 4px;
 }
 
-.user-title {
-    font-size: 14px;
-    color: #b0b3b8; /* Slightly lighter gray */
-    text-align: center;
+.profile-info p {
+    font-size: 12px;
+    color: var(--text-secondary);
 }
 
-hr {
-    border: 0;
-    border-top: 1px solid #444;
-    margin: 15px 0;
+.profile-stats {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.premium-btn {
-    background-color: #0073b1; /* LinkedIn Blue */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    width: 100%;
-    text-align: center;
-}
-
-.premium-btn:hover {
-    background-color: #005582;
+.stat {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 4px 0;
 }
 
 .analytics-btn {
@@ -230,56 +284,71 @@ hr {
     cursor: pointer;
 }
 /* Feed Section */
-.feed {
-    width: 100%;
+.create-post {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.post-input {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.post-profile {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
 }
 
 .start-post {
-    background: #2d3339;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 35px;
+    background-color: transparent;
+    color: var(--text-secondary);
+    text-align: left;
+    cursor: pointer;
+}
+
+.post-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-option {
     display: flex;
     align-items: center;
-    gap: 10px;
-}
-
-.start-post input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #444;
-    border-radius: 20px;
-    font-size: 14px;
-    margin-right: 10px;
-    background-color: #1d2226;
-    color: #d1d1d1;
-}
-
-.start-post input::placeholder {
-    color: #888;
-}
-
-.start-post button {
-    background: #0a66c2;
-    color: white;
+    gap: 8px;
+    padding: 8px 16px;
+    background: transparent;
     border: none;
-    padding: 10px 15px;
-    border-radius: 20px;
+    color: var(--text-secondary);
     cursor: pointer;
-    font-size: 14px;
+    border-radius: 4px;
 }
 
-.start-post button:hover {
-    background: #004182;
+.post-option:hover {
+    background-color: #404448;
 }
+
+.text-blue { color: #70b5f9; }
+.text-green { color: #7fc15e; }
+.text-orange { color: #e7a33e; }
+.text-red { color: #f5987e; }
 
 /* Post Styling */
-.post {
+.post-content {
     background: #2d3339;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     margin-top: 20px;
+    margin-bottom: 16px;
 }
 
 .post h4 {
@@ -303,6 +372,9 @@ hr {
 /* Right Sidebar */
 .right-sidebar {
     width: 90%;
+    top: 70px;
+    position: sticky;
+    height: fit-content;
     background: #2d3339;
     padding: 20px;
     border-radius: 10px;
@@ -411,6 +483,7 @@ hr {
 @media (max-width: 768px) {
     main {
         flex-direction: column;
+        width: 100%;
     }
 
     .profile-sidebar,
@@ -420,6 +493,65 @@ hr {
     }
 
     .search-bar input {
-        width: 200px;
+        width: 100px;
     }
 }
+@media (max-width: 600px) {
+    main {
+        flex-direction: column;
+        width: 100%;
+        font-size: 14px;
+        padding: .4em;
+    }
+
+    .profile-sidebar,
+    .feed,
+    .suggestions {
+        width: 100%;
+    }
+
+    .search-bar input {
+        width: 100px;
+    }
+}
+@media (max-width: 420px) {
+    main {
+        flex-direction: column;
+        width: 100%;
+       padding: .2em;
+       font-size: 13px;
+    }
+
+    .profile-sidebar,
+    .feed,
+    .suggestions {
+        width: 100%;
+    }
+
+    .search-bar input {
+        width: 100px;
+    }
+}
+@media (max-width: 320px) {
+    main {
+        flex-direction: column;
+        width: 100%;
+       padding: .1em;
+       font-size: 10px;
+    }
+
+    .profile-sidebar,
+    .feed,
+    .suggestions {
+        width: 100%;
+    }
+
+    .search-bar input {
+        width: 100px;
+    }
+}
+.main-content {
+    max-width: 100%;
+    margin: 0;
+}
+
